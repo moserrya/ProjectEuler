@@ -10,7 +10,7 @@ describe Lexographic do
 	end
 	
 	it "should return the nth lexographic permutation" do
-		lexographic.nth_permutation(23).should eq([4, 3, 2, 1])
+		lexographic.nth_permutation(24).should eq([4, 3, 2, 1])
 	end
 
 end

@@ -13,4 +13,9 @@ describe Pandigital do
 	it "should return a sorted array" do
 		pandigital_array[-1].should eq("4321")
 	end
+
+	it "should recognize the prime sub-string divisibility property" do
+		Pandigital.sub_string_divisibility(1406357289).should eq(true)
+	end
+
 end
