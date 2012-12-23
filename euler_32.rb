@@ -20,7 +20,8 @@ products=[]
 
 Pandigital.pandigital_array_maker(9).each do |number|
 	last4 = number[5..8].to_i
-	products << last4 if number[0].to_i * number[1..4].to_i == last4 || number[0..1].to_i * number[2..4].to_i == last4
+	products << last4 if number[0].to_i * number[1..4].to_i == last4
+	products << last4 if number[0..1].to_i * number[2..4].to_i == last4
 end
 
 puts products.uniq.inject(:+)
