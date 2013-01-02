@@ -16,8 +16,6 @@ require_relative 'lib/pandigital'
 
 # Find the sum of all 0 to 9 pandigital numbers with this property.
 
-
-
 pandigital_array = Pandigital.pandigital_array_maker(10, 0)
 
 puts pandigital_array[-10..-1]
