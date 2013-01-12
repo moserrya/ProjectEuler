@@ -1,6 +1,5 @@
 class Integer
   def factorial
-  	return 1 if self == 0
-    self.downto(1).inject(:*)
+    self.downto(1).inject(:*) || 1
   end
 end

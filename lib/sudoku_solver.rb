@@ -114,6 +114,16 @@ class SudokuSolver
 		end
 	end
 
+	def display_table
+		puts
+		@values.values.each_with_index do |number, index|
+			print number << ' '
+			print '| ' if (index + 1) % 3 == 0 && (index + 1) % 9 != 0
+			puts if (index + 1) % 9 == 0
+			puts '------+-------+------' if (index + 1) % 27 == 0 && index != 80
+		end
+	end
+
 	# def search
 	# 	@values = @values.sort_by { |key, value| value.length }.inject({}) {|h,(k,v)| h[k]=v; h}
 	# 	@values.each do |key, value|

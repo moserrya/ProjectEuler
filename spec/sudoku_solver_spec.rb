@@ -34,13 +34,13 @@ describe SudokuSolver do
 		grid = '003020600900305001001806400008102900700000008006708200002609500800203009005010300'
 		sudoku_puzzle.create_values(grid)
 		sudoku_puzzle.constraint_propogation
-		print sudoku_puzzle.values.values
+		sudoku_puzzle.display_table
 	end
 
-	it "should use constrain propogation to solve simple puzzles" do
-		grid = '4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......'
-		sudoku_puzzle.create_values(grid)
-		sudoku_puzzle.constraint_propogation
-		print sudoku_puzzle.values .sort_by { |key, value| key }
-	end
+	# it "should use constraint propogation to solve simple puzzles" do
+	# 	grid = '4.....8.5.3..........7......2.....6.....8.4......1.......6.3.7.5..2.....1.4......'
+	# 	sudoku_puzzle.create_values(grid)
+	# 	sudoku_puzzle.constraint_propogation
+	# 	print sudoku_puzzle.values
+	# end
 end
