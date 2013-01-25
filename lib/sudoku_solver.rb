@@ -93,7 +93,7 @@ class SudokuSolver
 	    end
 		end
 		constraint_propogation if @values.values.join('').length < before_length
-		# search if @values.values.join('').length > 81
+		search if @values.values.join('').length > 81
 	end
 
 	def eliminate(square)
@@ -124,16 +124,20 @@ class SudokuSolver
 		end
 	end
 
-	# def search
-	# 	@values = @values.sort_by { |key, value| value.length }.inject({}) {|h,(k,v)| h[k]=v; h}
-	# 	@values.each do |key, value|
-	# 		if value.length > 1
-	# 			value.each_char do |v|
-	# 				@values[key] = v
-	# 				break unless constraint_propogation
-	# 			end
-	# 			break if constraint_propogation
-	# 		end
-	# 	end
-	# end
+	def search
+		@values = @values.sort_by { |key, value| value.length }.inject({}) {|h,(k,v)| h[k]=v; h}
+		valstor = @values
+		@values.each do |key, value|
+			if value.length > 1
+				value.each_char do |v|
+					@values[key] = v
+					unless constraint_propogation
+						@values = valstor
+						break
+					end
+				end
+				break if constraint_propogation
+			end
+		end
+	end
 end
